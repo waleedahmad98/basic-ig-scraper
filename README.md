@@ -3,10 +3,10 @@ This is a basic tool that uses the BeautifulSoup library to scrape photos from I
 
 ## Instruction:
 You must have the following libraries installed in Python:
-*BeautifulSoup
-*Selenium
-*Requests
-*Validator_Collection (checkers)
+* BeautifulSoup
+* Selenium
+* Requests
+* Validator_Collection (checkers)
 
 Just run the run.py file and enter your credentials.
 
