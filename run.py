@@ -17,7 +17,7 @@ def scrapeIG(USERNAME, PASSWORD):
     os.mkdir("images")
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(options=options, executable_path=r'C:\Users\walee\Desktop\insta_scraper\geckodriver.exe', )
+    driver = webdriver.Firefox(options=options, executable_path=r'\\PATH_TO_GECKO', )
     driver.get(f'https://www.instagram.com/accounts/login/?next=%2F{USERNAME}%2F&source=desktop_nav')
     sleep(1)
     driver.find_element_by_name("username").send_keys(USERNAME)
