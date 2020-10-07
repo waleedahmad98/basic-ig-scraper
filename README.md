@@ -6,9 +6,5 @@ You must have the following libraries installed in Python:
 * BeautifulSoup
 * Selenium
 * Requests
-* Validator_Collection (checkers)
 
-Just run the run.py file and enter your credentials.
-
-## Note:
-The images saved are not of full quality, but are lower res photos.
+Just run the run.py file and enter your credentials and the images will be saved into an images folder after the scrape is done.
