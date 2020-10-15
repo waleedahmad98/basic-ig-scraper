@@ -16,9 +16,9 @@ def scrapeIG(USERNAME, PASSWORD):
     os.mkdir("images")
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(options=options, executable_path=r'PATH_TO_GECKO', )
+    driver = webdriver.Firefox(options=options, executable_path=r'geckodriver.exe', )
     driver.get(f'https://www.instagram.com/accounts/login/?next=%2F{USERNAME}%2F&source=desktop_nav')
-    sleep(1)
+    sleep(5)
     driver.find_element_by_name("username").send_keys(USERNAME)
     driver.find_element_by_name("password").send_keys(PASSWORD)
     driver.find_element_by_xpath("/html/body/div[1]/section/main/div/article/div/div[1]/div/form/div/div[3]/button/div").click()
@@ -60,21 +60,23 @@ def getType(text):
     
 
 
-# In[ ]:
-
-
 if __name__=="__main__":
 
     USERNAME=input("enter your IG username: ")
     PASSWORD=input("enter your IG password (trust me its safe): ")
     print("fetching.. this may take a while!")
     
-   # try:
-    photos = scrapeIG(USERNAME, PASSWORD)
-    print("Completed!")
+    try:
+        scrapeIG(USERNAME, PASSWORD)
+        print("Completed!")
     except:
         print("Oh oh, we ran into an error. Please check your credentials.")
-    
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
