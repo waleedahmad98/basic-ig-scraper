@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 from bs4 import BeautifulSoup as Soup
 import requests
 from selenium import webdriver
@@ -11,8 +5,15 @@ from selenium.webdriver.firefox.options import Options
 from time import sleep
 import urllib.request as url
 import os
+from shutil import rmtree as removeDIR
+from tqdm import tqdm
 
 def scrapeIG(USERNAME, PASSWORD):
+    try:
+        removeDIR("images")
+    except:
+        pass
+
     os.mkdir("images")
     options = Options()
     options.headless = True
@@ -42,7 +43,7 @@ def scrapeIG(USERNAME, PASSWORD):
                 links.append(x['href'])
     
     content = []
-    for link in links:
+    for link in tqdm(links, desc = "fetching content"):
         driver.get(f'http://www.instagram.com{link}')
         sleep(1)
         soup = Soup(driver.page_source, 'html.parser')
@@ -71,16 +72,4 @@ if __name__=="__main__":
         print("Completed!")
     except:
         print("Oh oh, we ran into an error. Please check your credentials.")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
