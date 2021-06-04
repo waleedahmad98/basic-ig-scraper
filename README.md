@@ -1,10 +1,4 @@
 # basic-ig-scraper
-This is a basic tool that uses the BeautifulSoup library to scrape photos from Instagram and saves them to a local directory.
+A simple tool which lets you download your posts from Instagram! Just enter you username and password (safe) in the tool and your images and videos will be downloaded in folders.
 
-## Instruction:
-You must have the following libraries installed in Python:
-* BeautifulSoup
-* Selenium
-* Requests
-
-Just run the run.py file and enter your credentials and the images will be saved into an images folder after the scrape is done.
+It may take a while for executable file to start.
